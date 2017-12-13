@@ -13,7 +13,7 @@ def get_qr_code(image_path):
 		strqrcode = open(output_qr_path, 'r').read()
 
 		# print strqrcode
-		print "Results for " + image_path ": " + strqrcode
+		print "Results for " + image_path + ": " + strqrcode
 
 	else:
 		print "QR-Code text file not found"
