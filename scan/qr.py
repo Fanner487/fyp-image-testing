@@ -9,20 +9,20 @@ countdown = 3
 
 print "Taking a snapshot in"
 
-# counts down from 3 before taking snapshot
-while countdown > 0:
+# # counts down from 3 before taking snapshot
+# while countdown > 0:
 
-	print str(countdown)
+# 	print str(countdown)
 
-	sleep(1)
+# 	sleep(1)
 
-	countdown -= 1
-
-
-camera.capture(output_image_path)
+# 	countdown -= 1
 
 
-print "Reading data from qrcode"
+# camera.capture(output_image_path)
+
+
+# print "Reading data from qrcode"
 
 
 # call os command to read qr data to text file
