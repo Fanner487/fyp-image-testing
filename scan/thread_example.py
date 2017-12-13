@@ -1,7 +1,7 @@
 import threading
 import time
-from lib.qr import get_qr_code
-from lib.scan import scan_image
+from processing.qr import get_qr_code
+from processing.scan import scan_image
 
 def worker(file):
     """thread worker function"""
