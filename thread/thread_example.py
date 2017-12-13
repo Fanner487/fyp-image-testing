@@ -4,8 +4,8 @@ import time
 def worker(image):
     """thread worker function"""
     # time.sleep(0.5)
-    print '\nWorker'
-    print image
+    print '\nWorker' + image
+    # print image
     return
 
 images = ['phone1.jpg', 'phone2.jpg', 'phone2.jpg']
