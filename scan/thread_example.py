@@ -13,7 +13,7 @@ def worker(file):
     # print image
     return
 
-images = ['phone1', 'phone2', 'phone2']
+images = ['phone1', 'phone2', 'phone3']
 threads = []
 
 for image in images:
