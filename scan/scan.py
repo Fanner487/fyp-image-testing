@@ -85,4 +85,4 @@ def scan_image(file):
 	# cv2.imshow("Scanned", imutils.resize(warped, height = 650))
 	output = file + "-result.png"
 	cv2.imwrite(output, imutils.resize(warped, height = 650))
-	cv2.waitKey(0)
+	# cv2.waitKey(0)
