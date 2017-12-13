@@ -3,8 +3,11 @@ from time import sleep
 
 def get_qr_code(image_name):
 
-	input_scan_path = "scans/" + image_name + "-result.png"
-	output_qr_path = "codes/" + image_name + "-result.txt"
+	images_dir = "images/"
+	codes_dir = "codes/"
+
+	input_scan_path = images_dir + image_name + "-result.png"
+	output_qr_path = codes_dir + image_name + "-result.txt"
 
 	if not os.path.exists(output_qr_path):
 		os.makedirs(output_qr_path)

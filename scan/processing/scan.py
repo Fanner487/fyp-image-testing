@@ -7,7 +7,10 @@ import os
  
 
 def scan_image(file):
-	input_file = "images/" + file + ".jpg"
+
+	images_dir = "images/"
+	scans_dir = "scans/"
+	input_file = images_dir + file + ".jpg"
 
 	print "Scanning image: " + input_file
 
@@ -75,10 +78,10 @@ def scan_image(file):
 	print "STEP 3: Apply perspective transform"
 	# cv2.imshow("Original", imutils.resize(orig, height = 650))
 	# cv2.imshow("Scanned", imutils.resize(warped, height = 650))
-	output = "scans/" + file + "-result.png"
+	output = scans_dir + file + "-result.png"
 
-	if not os.path.exists(output):
-		os.makedirs(output)
+	if not os.path.exists(scans_dir):
+		os.makedirs(scans_dir)
 	
 	cv2.imwrite(output, imutils.resize(warped, height = 650))
 	# cv2.waitKey(0)
