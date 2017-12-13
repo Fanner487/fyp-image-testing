@@ -34,10 +34,10 @@ def scan_image(file):
 	 
 	# show the original image and the edge detected image
 	print "STEP 1: Edge Detection"
-	cv2.imshow("Image", image)
-	cv2.imshow("Edged", edged)
-	cv2.waitKey(0)
-	cv2.destroyAllWindows()
+	# cv2.imshow("Image", image)
+	# cv2.imshow("Edged", edged)
+	# cv2.waitKey(0)
+	# cv2.destroyAllWindows()
 
 
 
@@ -61,9 +61,9 @@ def scan_image(file):
 	# show the contour (outline) of the piece of paper
 	print "STEP 2: Find contours of paper"
 	cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
-	cv2.imshow("Outline", image)
-	cv2.waitKey(0)
-	cv2.destroyAllWindows()
+	# cv2.imshow("Outline", image)
+	# cv2.waitKey(0)
+	# cv2.destroyAllWindows()
 
 
 
@@ -81,8 +81,8 @@ def scan_image(file):
 	 
 	# show the original and scanned images
 	print "STEP 3: Apply perspective transform"
-	cv2.imshow("Original", imutils.resize(orig, height = 650))
-	cv2.imshow("Scanned", imutils.resize(warped, height = 650))
+	# cv2.imshow("Original", imutils.resize(orig, height = 650))
+	# cv2.imshow("Scanned", imutils.resize(warped, height = 650))
 	output = file + "-result.png"
 	cv2.imwrite(output, imutils.resize(warped, height = 650))
 	cv2.waitKey(0)
