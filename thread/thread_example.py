@@ -1,15 +1,18 @@
 import threading
 import time
 
-def worker():
+def worker(image):
     """thread worker function"""
     # time.sleep(0.5)
     print '\nWorker'
+    print image
     return
 
+images = ['phone1.jpg', 'phone2.jpg', 'phone2.jpg']
 threads = []
-for i in range(5):
-    t = threading.Thread(target=worker)
+
+for image in images:
+    t = threading.Thread(target=worker, args=[image])
     threads.append(t)
 
     t.start()
