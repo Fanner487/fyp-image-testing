@@ -1,18 +1,9 @@
-# import the necessary packages
 from transform import four_point_transform
 import imutils
-# from skimage.filters import threshold_local
 import numpy as np
 import argparse
 import cv2
  
-
-
-# # construct the argument parser and parse the arguments
-# ap = argparse.ArgumentParser()
-# ap.add_argument("-i", "--image", required = True,
-# 	help = "Path to the image to be scanned")
-# args = vars(ap.parse_args())
 
 def scan_image(file):
 	input_file = file + ".jpg"
@@ -83,6 +74,6 @@ def scan_image(file):
 	print "STEP 3: Apply perspective transform"
 	# cv2.imshow("Original", imutils.resize(orig, height = 650))
 	# cv2.imshow("Scanned", imutils.resize(warped, height = 650))
-	output = file + "-result.png"
+	output = "scans/" + file + "-result.png"
 	cv2.imwrite(output, imutils.resize(warped, height = 650))
 	# cv2.waitKey(0)

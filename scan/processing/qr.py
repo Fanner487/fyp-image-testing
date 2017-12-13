@@ -1,11 +1,12 @@
 import os
 from time import sleep
 
-def get_qr_code(image_path):
+def get_qr_code(image_name):
 
-	output_qr_path = image_path + "-result.txt"
+	input_scan_path = "scans/" + image_name + "-result.png"
+	output_qr_path = "codes/" + image_name + "-result.txt"
 
-	os.system("zbarimg -q " + image_path + " > " + output_qr_path)
+	os.system("zbarimg -q " + image_name + " > " + output_qr_path)
 
 	if os.path.exists(output_qr_path):
 
@@ -13,7 +14,7 @@ def get_qr_code(image_path):
 		strqrcode = open(output_qr_path, 'r').read()
 
 		# print strqrcode
-		print "Results for " + image_path + ": " + strqrcode
+		print "Results for " + image_name + ": " + strqrcode
 
 	else:
 		print "QR-Code text file not found"
