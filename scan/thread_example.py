@@ -6,10 +6,10 @@ from processing.scan import scan_image
 def worker(file):
     """thread worker function"""
     # time.sleep(0.5)
-    print '\nWorker' + image
+    print 'Thread for: ' + image
 
     scan_image(file)
-    get_qr_code(file + "-result.png")
+    get_qr_code(file)
     # print image
     return
 
