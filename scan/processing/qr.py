@@ -3,16 +3,16 @@ from time import sleep
 
 def get_qr_code(image_name):
 
-	images_dir = "images/"
+	scans_dir = "scans/"
 	codes_dir = "codes/"
 
-	input_scan_path = images_dir + image_name + "-result.png"
+	input_scan_path = scans_dir + image_name + "-result.png"
 	output_qr_path = codes_dir + image_name + "-result.txt"
 
-	if not os.path.exists(output_qr_path):
-		os.makedirs(output_qr_path)
+	if not os.path.exists(codes_dir):
+		os.makedirs(codes_dir)
 
-	os.system("zbarimg -q " + image_name + " > " + output_qr_path)
+	os.system("zbarimg -q " + input_scan_path + " > " + output_qr_path)
 
 	if os.path.exists(output_qr_path):
 
