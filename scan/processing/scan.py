@@ -3,6 +3,7 @@ import imutils
 import numpy as np
 import argparse
 import cv2
+import os
  
 
 def scan_image(file):
