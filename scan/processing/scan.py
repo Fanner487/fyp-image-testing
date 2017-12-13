@@ -77,7 +77,7 @@ def scan_image(file):
 	output = "scans/" + file + "-result.png"
 
 	if not os.path.exists(output):
-    	os.makedirs(output)
+		os.makedirs(output)
 	
 	cv2.imwrite(output, imutils.resize(warped, height = 650))
 	# cv2.waitKey(0)
