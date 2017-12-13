@@ -7,7 +7,7 @@ def get_qr_code(image_name):
 	output_qr_path = "codes/" + image_name + "-result.txt"
 
 	if not os.path.exists(output_qr_path):
-    	os.makedirs(output_qr_path)
+		os.makedirs(output_qr_path)
 
 	os.system("zbarimg -q " + image_name + " > " + output_qr_path)
 
