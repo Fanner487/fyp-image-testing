@@ -6,7 +6,7 @@ import cv2
  
 
 def scan_image(file):
-	input_file = file + ".jpg"
+	input_file = "images/" + file + ".jpg"
 
 	print "Scanning image: " + input_file
 
