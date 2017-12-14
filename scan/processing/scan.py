@@ -40,7 +40,10 @@ def scan_image(file):
 	# largest ones, and initialize the screen contour
 	_, cnts, _ = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 	cnts = sorted(cnts, key = cv2.contourArea, reverse = True)[:5]
-	 
+
+	screenCnt = 0
+
+	
 	# loop over the contours
 	for c in cnts:
 		# approximate the contour
