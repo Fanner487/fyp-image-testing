@@ -8,12 +8,15 @@ from processing.scan import scan_image
 def extract_code(file):
     """thread worker function"""
     # time.sleep(0.5)
-    print 'Thread for: ' + image
+    print 'Thread for: ' + file
 
     scan_image(file)
     get_qr_code(file)
     # print image
     return
+
+
+
 
 camera = picamera.PiCamera()
 
