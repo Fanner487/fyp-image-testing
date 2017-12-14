@@ -10,9 +10,9 @@ while True:
 
 	time.sleep(1)
 
-	image_path = "images/" + int(time.time()) + ".jpg"
+	image_path = "images/" + str(int(time.time())) + ".jpg"
 
-	print "Taking photo: " + image_path
+	print "Taking photo: " + str(image_path)
 
 	camera.capture(image_path)
 
