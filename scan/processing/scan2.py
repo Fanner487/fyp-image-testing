@@ -85,7 +85,8 @@ def scan_image(file):
 		os.makedirs(scans_dir)
 	
 	cv2.imwrite(output, imutils.resize(warped, height = 650))
-	cv2.waitKey(0)
+	# cv2.waitKey(0)
+	# cv2.destroyAllWindows()
 
 	# if screenCnt > 0:
 		
