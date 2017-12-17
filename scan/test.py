@@ -2,7 +2,7 @@ import picamera
 import threading
 import time
 from processing.qr import get_qr_code
-from processing.scan import scan_image
+from processing.scan2 import scan_image
 
 
 def extract_code(file):

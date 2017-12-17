@@ -57,36 +57,37 @@ def scan_image(file):
 
 	# if screenCnt > 0 :
 	cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
-	# cv2.imshow("Outline", image)
-	# cv2.waitKey(0)
-	# cv2.destroyAllWindows()
+	cv2.imshow("Outline", image)
+	cv2.waitKey(0)
+	cv2.destroyAllWindows()
 
 
 
 
 	# apply the four point transform to obtain a top-down
 	# view of the original image
-
-	if screenCnt > 0:
-		warped = four_point_transform(orig, screenCnt.reshape(4, 2) * ratio)
+	warped = four_point_transform(orig, screenCnt.reshape(4, 2) * ratio)
 	 
-		# convert the warped image to grayscale, then threshold it
-		# to give it that 'black and white' paper effect
-		# warped = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
-		# warped = threshold_local(warped, 251, offset = 10)
-		# warped = cv2.adaptiveThreshold(warped, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 41, 10)
-		# warped = warped.astype("uint8") * 255
-		 
-		# show the original and scanned images
-		print "STEP 3: Apply perspective transform"
-		# cv2.imshow("Original", imutils.resize(orig, height = 650))
-		# cv2.imshow("Scanned", imutils.resize(warped, height = 650))
-		output = scans_dir + file + "-result.jpg"
+	# convert the warped image to grayscale, then threshold it
+	# to give it that 'black and white' paper effect
+	# warped = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
+	# warped = threshold_local(warped, 251, offset = 10)
+	# warped = cv2.adaptiveThreshold(warped, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 41, 10)
+	# warped = warped.astype("uint8") * 255
+	 
+	# show the original and scanned images
+	print "STEP 3: Apply perspective transform"
+	cv2.imshow("Original", imutils.resize(orig, height = 650))
+	cv2.imshow("Scanned", imutils.resize(warped, height = 650))
+	output = scans_dir + file + "-result.jpg"
 
-		if not os.path.exists(scans_dir):
-			os.makedirs(scans_dir)
+	if not os.path.exists(scans_dir):
+		os.makedirs(scans_dir)
+	
+	cv2.imwrite(output, imutils.resize(warped, height = 650))
+	cv2.waitKey(0)
+
+	# if screenCnt > 0:
 		
-		cv2.imwrite(output, imutils.resize(warped, height = 650))
-		# cv2.waitKey(0)
-	else:
-		print "No screen detected"
+	# else:
+	# 	print "No screen detected"
