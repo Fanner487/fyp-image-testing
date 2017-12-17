@@ -13,7 +13,7 @@ def scan_image(file):
 	input_file = images_dir + file + ".jpg"
 
 	print "Scanning image: " + input_file
-
+	
 	# load the image and compute the ratio of the old height
 	# to the new height, clone it, and resize it
 	image = cv2.imread(input_file)
