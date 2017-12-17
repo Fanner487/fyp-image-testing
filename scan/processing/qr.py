@@ -6,7 +6,7 @@ def get_qr_code(image_name):
 	scans_dir = "scans/"
 	codes_dir = "codes/"
 
-	input_scan_path = scans_dir + image_name + "-result.png"
+	input_scan_path = scans_dir + image_name + "-result.jpg"
 	output_qr_path = codes_dir + image_name + "-result.txt"
 
 	if not os.path.exists(codes_dir):

@@ -27,7 +27,7 @@ while True:
 	time.sleep(1)
 
 	time_epoch = str(int(time.time()))
-	image_path = "scans/" + time_epoch + "-result.png"
+	image_path = "scans/" + time_epoch + "-result.jpg"
 
 	print "Taking photo: " + str(image_path)
 

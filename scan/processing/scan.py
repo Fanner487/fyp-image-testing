@@ -81,7 +81,7 @@ def scan_image(file):
 		print "STEP 3: Apply perspective transform"
 		# cv2.imshow("Original", imutils.resize(orig, height = 650))
 		# cv2.imshow("Scanned", imutils.resize(warped, height = 650))
-		output = scans_dir + file + "-result.png"
+		output = scans_dir + file + "-result.jpg"
 
 		if not os.path.exists(scans_dir):
 			os.makedirs(scans_dir)
