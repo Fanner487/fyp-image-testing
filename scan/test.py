@@ -21,7 +21,7 @@ def extract_code(file):
 camera = picamera.PiCamera()
 
 
-images = ["cam1", "cam2", "cam3", "cam4"]
+images = ["cam1", "cam2", "cam3", "cam4", "cam6", "cam7", "cam8", "cam9"]
 
 
 for image in images:
