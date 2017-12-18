@@ -4,6 +4,9 @@ import pytesseract
 import argparse
 import cv2
 import os
+import time
+
+
  
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -14,6 +17,8 @@ ap.add_argument("-p", "--preprocess", type=str, default="thresh",
 args = vars(ap.parse_args())
 
 # load the example image and convert it to grayscale
+
+start_time = time.time()
 image = cv2.imread(args["image"])
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
  
@@ -36,6 +41,8 @@ cv2.imwrite(filename, gray)
 text = pytesseract.image_to_string(Image.open(filename))
 os.remove(filename)
 print text
+
+print "--- %s seconds ---" % (time.time() - start_time)
  
 # show the output images
 cv2.imshow("Image", image)
